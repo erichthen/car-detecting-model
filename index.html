@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Detection Model</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Car Detection Model</h1>
+        <div class = "until">
+            <p>  --for once this shit actually gets trained well</p>
+        </div>
+        <form action="http://127.0.0.1:5000/upload" method="post" enctype="multipart/form-data" id="uploadForm">
+            <input type="file" name="file" id="file" class="file-input">
+            <input type="submit" value="Upload Image" class="submit-button">
+        </form>
+        <div id="predictionResult" class="result-container"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

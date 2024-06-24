@@ -1,0 +1,69 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #697191;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background-color: #c3b6b6;
+    padding: 1em;
+    width: 80;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* make the <p> I have a lot 
+smaller, and put it in the middle of the container, place it right under the title*/
+/*move this <p> slightly upwards*/
+
+.until p {
+    font-size: 0.8em;
+    margin-top: -2em;
+}
+
+
+h1 {
+    color: #333;
+    margin-bottom: 1em;
+    margin-top: px
+}
+
+.file-label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    
+}
+
+.file-input {
+    display: block;
+    margin: auto 1em auto;  
+    margin-left: 92px;
+    margin-bottom: 0.5em;
+    margin-top: 4em;
+}
+
+.submit-button {
+    padding: 0.5em 2em;
+    border: none;
+    background-color: #007BFF;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+.result-container {
+    margin-top: 2em;
+    text-align: left;
+}
