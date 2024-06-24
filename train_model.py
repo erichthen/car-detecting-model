@@ -4,9 +4,11 @@ from tensorflow.keras.applications import EfficientNetB0
 from tensorflow.keras.layers import GlobalAveragePooling2D, Dense, Dropout
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.models import Model
-from tensorflow.keras.callbacks import EarlyStopping
+from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint, ReduceLROnPlateau
+import shutil
+import os
 
-data_dir = 'meta'
+data = 'small_meta'
 img_height, img_width = 224, 224
 
 #augment the data, and split it into training and validation sets
@@ -21,16 +23,16 @@ data_prep = ImageDataGenerator(
 
 #load the data from meta
 train_gen = data_prep.flow_from_directory(
-    data_dir,
+    data,
     target_size = (img_height, img_width),
-    batch_size = 32,
+    batch_size = 16,
     class_mode = 'categorical',
     subset = 'training')
 
 validation_gen = data_prep.flow_from_directory(
-    data_dir,
+    data,
     target_size = (img_height, img_width),
-    batch_size = 32,
+    batch_size = 16,
     class_mode = 'categorical',
     subset = 'validation')
 
@@ -55,15 +57,15 @@ model = Model(inputs=base_model.input, outputs=predictions)
 
 for layer in base_model.layers:
     layer.trainable = False
-
+    
 model.compile(optimizer=Adam(learning_rate=0.0001), loss='categorical_crossentropy', metrics=['accuracy'])
-early_stopping = EarlyStopping(monitor='val_loss', patience=5, restore_best_weights=True)
+model.summary()
 
 history = model.fit(
     train_gen,
     validation_data=validation_gen,
-    epochs=50,  
-    callbacks=[early_stopping]
+    epochs=10,  
+    verbose=1
 )
 
 model.save('model.h5')

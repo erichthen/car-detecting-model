@@ -1,43 +1,58 @@
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #697191;
+    background-color: #292c38;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 90vh;
     margin: 0;
 }
 
-.container {
+.input-container {
+    
     text-align: center;
+    width: 300%;
     background-color: #c3b6b6;
     padding: 1em;
     width: 80;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+    margin-bottom: 2em;
+    margin-right: 30em;
 }
 
-/* make the <p> I have a lot 
-smaller, and put it in the middle of the container, place it right under the title*/
-/*move this <p> slightly upwards*/
+.until h1 {
+    font-size: 46px;
+    letter-spacing: 30px;
+}
+
+.until .detector {
+    display: inline-block;
+}
+
+.until .car {
+    color: #3d4245;
+    letter-spacing: 20px;
+}
+
+.until .detector {
+    color: #886e6b;
+    letter-spacing: 12px;
+}
 
 .until p {
-    font-size: 0.8em;
-    margin-top: -2em;
+    margin-top: -30px;
+    color: #666666;
+    font-style: italic;
+    margin-left:-2em;
 }
 
-
-h1 {
-    color: #333;
-    margin-bottom: 1em;
-    margin-top: px
-}
-
-.file-label {
-    display: block;
-    margin-bottom: 0.5em;
-    font-weight: bold;
-    
+.file-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: -4em
 }
 
 .file-input {
@@ -45,25 +60,22 @@ h1 {
     margin: auto 1em auto;  
     margin-left: 92px;
     margin-bottom: 0.5em;
-    margin-top: 4em;
+    margin-top: 2em;
 }
 
 .submit-button {
     padding: 0.5em 2em;
     border: none;
-    background-color: #007BFF;
+    background-color: #0c0d0e;
     color: #fff;
     font-size: 1em;
     cursor: pointer;
     border-radius: 4px;
     transition: background-color 0.3s;
+    margin-bottom: 2em
+
 }
 
 .submit-button:hover {
     background-color: #0056b3;
-}
-
-.result-container {
-    margin-top: 2em;
-    text-align: left;
 }
